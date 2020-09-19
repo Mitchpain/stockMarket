@@ -1,5 +1,14 @@
-$color-react: #00d8ff;
-$color-secondary: #006E83;
+$color-main: #00d8ff;
+$color-secondary: #2ecae6;
+$color-background: #FFFFFF;
+$color-buy:#6bb84a;
+$color-sell:#ff006a;
+$font-main: 'Roboto Condensed', sans-serif;
+
+.text {
+    font-family: $font-main;
+    color:whitesmoke;
+}
 
 body {
     margin: 0;
@@ -10,20 +19,95 @@ body {
 #app {
     height: 100vh;
     width: 100vw;
+    background-color: $color-background;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section {
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: $color-main;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.app-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-secondary;
+    height:60vh;
+    width: 100%;
+    flex-direction: column;
 }
 
-.greeting {
-    display: block;
-    padding: 3rem;
-    border-radius: 15px;
-    background-color: $color-react;
-    font-size: 2rem;
+.main-header{
+    width: 100%;
+    .container{        
+        background-color: $color-main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+            @extend .text;
+            font-weight: 400;
+        }
+    }
 }
 
-.recommendation-sell{
-    color:red;
+#userInputs{
+    input{
+        border:0;
+        border-bottom: 1px solid $color-secondary;
+        background-color: $color-secondary;
+        font-weight:300;
+        @extend .text;     
+    }
+}
+
+.socialMedia-pieChart{
+    display: flex; 
+    width: 20%; 
+    height: 20%; 
+    border-radius: 50%; 
+}
+
+#stockName{
+    @extend .text;
+    display: flex; 
+    align-self: flex-start;
+    margin: 0;
+  /*  position: relative;
+    width: 5%;
+    top: -15%;
+    left: -30%;
+    font-weight:400;*/
+}
+
+table {
+    @extend .text;
+    border-collapse: collapse;
+    width: 100%;
+    cursor: context-menu;
+  }
+  th {
+    font-weight:400;
+  }
+  td{
+    font-weight:200;
+  }
+  td, th {
+    text-align: left;
+    padding: 8px;
+  }
+
+  .recommendation-sell{
+    background-color:$color-sell;
+}
+
+.recommendation-buy{
+    background-color:$color-buy;
 }

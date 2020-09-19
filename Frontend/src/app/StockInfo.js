@@ -17,7 +17,7 @@ export default class StockInfo {
         for (let i = 0; i < timeWindow ; i++) {
             dates.push(
                 new Date(
-                    Date.now() - i * ( 3600 * 1000 * 24)
+                    Date.now() + i * ( 3600 * 1000 * 24)
                     )
                 );
         }
@@ -38,9 +38,5 @@ export default class StockInfo {
         const validStockSymbol =  ["kirk", "trill", "tsla", "logm", "zm", "vslr"];
         const index = validStockSymbol.indexOf(stockSymbol.toLowerCase());  
         return (index > -1);
-    }
-    
-    static getSocialMediaCount(stockSymbol,socialMediaType){
-        return socialMediaCountGenerator(stockSymbol, socialMediaType);
     }
 }

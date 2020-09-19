@@ -22,18 +22,16 @@ export function stockPriceGenerator (stockSymbol, dates) {
 }
 
 export function recommendationAlgorithm (price, socialMediaCount) {
-    const temp = Math.random() * 1000;
-    if(price < temp && socialMediaCount < temp)
-    {
+    const temp = Math.random();
+    if(temp < 1/3){
         return recommendations.BUY;
     }
-    else if(price > temp && socialMediaCount < temp)
-    {
+    else if(1/3 < temp && temp < 2/3){
         return recommendations.HOLD;
     }
     return recommendations.SELL;
 }
 
 export function socialMediaCountGenerator(stockSymbol, socialMediaType){
-    return ((Math.random() * 1000)).toFixed(0);
+    return Number(((Math.random() * 1000)).toFixed(0));
 }

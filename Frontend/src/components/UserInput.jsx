@@ -4,10 +4,12 @@ import TimeWindowInput from "./TimeWindowInput.jsx";
 
 function UserInput(props) {
   return (
-  <form>
-    <StockSymbolInput stockSymbol = {props.stockSymbol} onChangeStockSymbol={props.onChangeStockSymbol} />
-    <TimeWindowInput timeWindow = {props.timeWindow} onChangeTimeWindow={props.onChangeTimeWindow} />
-  </form>
+    <div className="section">
+    <form id="userInputs">
+      <StockSymbolInput stockSymbol = {props.stockSymbol} onChangeStockSymbol={props.onChangeStockSymbol} />
+      <TimeWindowInput timeWindow = {props.timeWindow} onChangeTimeWindow={props.onChangeTimeWindow} />
+    </form>
+  </div>
   );
 };
 

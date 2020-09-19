@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import UserInput from './UserInput.jsx'
 import Result from './Result.jsx'
 import StockInfo from "../app/StockInfo";
+import SocialMediaInfo from '../app/SocialMediaInfo.js';
 const DEFAULT_TIME_WINDOW = 10;
 
 function App() {
@@ -14,30 +15,37 @@ function App() {
     const [stockRecommendations, setStockRecommendations] = React.useState(()=>{
         return [];
     });
-    const [socialMediaCount, setSocialMediaCount] = React.useState(()=>{
-        return 0;
-    });
+    let socialMediaInfos= new SocialMediaInfo(stockSymbol);
 
     useEffect(()=>{
-        setSocialMediaCount(StockInfo.getSocialMediaCount(stockSymbol, "socialMediaType"));
-        console.log(socialMediaCount);
+        socialMediaInfos = new SocialMediaInfo(stockSymbol);
     },[stockSymbol]);
 
     useEffect(()=>{
         if(StockInfo.validateStockSymbol(stockSymbol)){
             setStockRecommendations(
-                StockInfo.fetchStockPriceRecommendations(stockSymbol,timeWindow, socialMediaCount)
+                StockInfo.fetchStockPriceRecommendations(stockSymbol,timeWindow, socialMediaInfos.total)
             ); 
         }
     },[stockSymbol, timeWindow]);
 
     return (
-      <div className="greeting">
-        <UserInput onChangeStockSymbol={setStockSymbol} 
-        onChangeTimeWindow={setTimeWindow} stockSymbol={stockSymbol} 
-        timeWindow={timeWindow}/>
-        <Result stockRecommendations={stockRecommendations} />
-      </div>
+        <div id="app">
+            <header className="main-header">
+                <div className="container">
+                    <nav className="main-nav">
+                        <h1>Stock Market Recommender</h1>
+                    </nav>
+                </div>
+            </header>
+            <div className="app-container">
+                <UserInput onChangeStockSymbol={setStockSymbol} 
+                onChangeTimeWindow={setTimeWindow} stockSymbol={stockSymbol} 
+                timeWindow={timeWindow}/>
+                <Result stockSymbol={stockSymbol} socialMediaInfos={socialMediaInfos} stockRecommendations={stockRecommendations} />
+            </div>
+        </div>
+
     );
 };
   

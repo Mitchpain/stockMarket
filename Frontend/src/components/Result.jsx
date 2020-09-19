@@ -1,30 +1,18 @@
 import React from 'react';
-
+import SocialMediaInfos from './SocialMediaInfos.jsx';
+import StockPriceRecommendations from './StockPriceRecommendations.jsx'
 function Result(props) {
-
-  const stockRecommendations = (props.stockRecommendations);
-  const hasRecommendations = stockRecommendations?.length > 0;
-  return (
-    <div>
-      {hasRecommendations &&
-      <table>
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        {stockRecommendations.map((recommendation, index) => (
-          <tr key={index} className={"recommendation-"+recommendation.recommendation}>
-              <td>{recommendation.date.toLocaleDateString("en-US")}</td>
-              <td>{recommendation.price}</td>
-          </tr>
-    ))}
-        </tbody>
-    </table>}
-  </div>
-  );
+    const hasRecommendations = props.stockRecommendations?.length > 0;
+    if(hasRecommendations){
+        return (
+            <div className="section">
+                <h1 id="stockName">{props.stockSymbol.toUpperCase()}</h1>
+                <StockPriceRecommendations stockRecommendations={props.stockRecommendations}/>
+                <SocialMediaInfos socialMediaInfos = {props.socialMediaInfos} />
+            </div>
+        );
+    }
+    return(<div></div>);
 };
 
 export default Result;
