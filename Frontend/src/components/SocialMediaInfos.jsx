@@ -4,7 +4,7 @@ function SocialMediaInfo(props) {
     return (
         <div id="socialMediaInfos" className="stockInfoBase">
             <SocialMediaPieChart socialMediaInfos = {props.socialMediaInfos} />
-            <h3 id="socialMediaCounter" >Social Media Posts : {props.socialMediaInfos.total} </h3>
+            <h3 data-testid="socialMediaTotal" id="socialMediaCounter" >Social Media Posts : {props.socialMediaInfos.total}</h3>
         </div>
         );
 };
