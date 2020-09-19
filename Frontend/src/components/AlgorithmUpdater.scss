@@ -9,8 +9,9 @@
 
 #shadow{
     background-color: gray;
-    opacity: 1;
+    opacity: 0.75;
     width: 100vw;
     height: 100vh;
     z-index: 10;
+    position: absolute;
 }

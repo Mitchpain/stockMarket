@@ -11,7 +11,7 @@ const mockedSocialMediaInfos = {
 }
 
 afterEach(cleanup);
-describe('SocialMediaInfos should a pie chart.', () => { 
+describe('SocialMediaInfos should render a pie chart.', () => { 
     it('It should render a pie chart',()=>{
         render(<SocialMediaInfos socialMediaInfos={mockedSocialMediaInfos}/>);
         const pieChart = screen.getByTestId("socialMediaPieChart");

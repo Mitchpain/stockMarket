@@ -7,12 +7,16 @@ function Header(props) {
         <header className="main-header">
             <div className="container">
                 <nav className="main-nav">
-                    <h1>Stock Market Recommender</h1>
-                    <h1 onClick={()=>{setAlgorithmUpdaterIsDisplayed(!algorithmUpdaterIsDisplayed)}} id="updateButton">Update Algorithm</h1>
+                    <h1 data-testid="headerAppName">Stock Market Recommender</h1>
+                    <h1 data-testid="headerAlgoButton" 
+                        onClick={()=>{setAlgorithmUpdaterIsDisplayed(!algorithmUpdaterIsDisplayed)}} 
+                        id="updateButton">
+                            Update Algorithm
+                    </h1>
                 </nav>
             </div>
             {algorithmUpdaterIsDisplayed &&
-                <div>
+                <div data-testid="algoWindow" >
                     <AlgorithmUpdater setAlgorithmUpdaterIsDisplayed={setAlgorithmUpdaterIsDisplayed} setNewAlgorithm={props.setNewAlgorithm} setAlgorithmHasChanged={props.setAlgorithmHasChanged} />
                     <div id="shadow"></div>
                 </div>

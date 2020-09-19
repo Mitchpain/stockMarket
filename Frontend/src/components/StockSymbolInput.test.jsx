@@ -22,10 +22,10 @@ describe('StockSymbolInput should render a text input.', () => {
         expect(mocked).toBe(inputStockSymbol);
       });  
       it('It should not trigger the props function if the value is invalid.',()=>{
-        const inputStockSymbol = "tesla";
+        const invalidInputStockSymbol = "tesla";
         render(<StockSymbolInput onChangeStockSymbol={onChangeMocked} />);
         const textInput = screen.getByPlaceholderText("Stock symbol");
-        fireEvent.change(textInput, { target: { value: inputStockSymbol} })
-        expect(mocked).not.toBe(inputStockSymbol);
+        fireEvent.change(textInput, { target: { value: invalidInputStockSymbol} })
+        expect(mocked).not.toBe(invalidInputStockSymbol);
       });  
   });

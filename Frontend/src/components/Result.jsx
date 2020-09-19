@@ -6,13 +6,13 @@ function Result(props) {
     if(hasRecommendations){
         return (
             <div className="section" id="result">
-                <h1 id="stockName">{props.stockSymbol.toUpperCase()}</h1>
+                <h1 data-testid="stockSymbolLabel" id="stockName">{props.stockSymbol.toUpperCase()}</h1>
                 <StockPriceRecommendations stockRecommendations={props.stockRecommendations}/>
                 <SocialMediaInfos socialMediaInfos = {props.socialMediaInfos} />
             </div>
         );
     }
-    return(<div></div>);
+    return(<div data-testid="resultIsEmpty"></div>);
 };
 
 export default Result;
