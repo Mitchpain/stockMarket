@@ -50,7 +50,7 @@ function App() {
             <Header setNewAlgorithm={setNewAlgorithm} setAlgorithmHasChanged={setAlgorithmHasChanged}/>
             <div className="app-container">
                 <UserInput onChangeStockSymbol={setStockSymbol} 
-                onChangeTimeWindow={setTimeWindow} stockSymbol={stockSymbol} 
+                onChangeTimeWindow={setTimeWindow}
                 timeWindow={timeWindow}/>
                 <Result stockSymbol={stockSymbol} socialMediaInfos={socialMediaInfos} stockRecommendations={stockRecommendations} />
             </div>

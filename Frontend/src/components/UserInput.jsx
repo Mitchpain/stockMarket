@@ -6,7 +6,7 @@ function UserInput(props) {
   return (
     <div  id="userInputs" className="section">
     <form onSubmit={(e)=>{e.preventDefault();}}>
-      <StockSymbolInput stockSymbol = {props.stockSymbol} onChangeStockSymbol={props.onChangeStockSymbol} />
+      <StockSymbolInput onChangeStockSymbol={props.onChangeStockSymbol} />
       <TimeWindowInput timeWindow = {props.timeWindow} onChangeTimeWindow={props.onChangeTimeWindow} />
     </form>
   </div>
