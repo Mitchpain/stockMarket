@@ -11,17 +11,18 @@ function App() {
     const [stockSymbol, setStockSymbol] = React.useState(()=>{
         return "";
     });
+
     const [timeWindow, setTimeWindow] = React.useState(()=>{
         return DEFAULT_TIME_WINDOW;
     });
+
     const [stockRecommendations, setStockRecommendations] = React.useState(()=>{
         return [];
     });
+    
     const [algorithmHasChange, setAlgorithmHasChanged] = React.useState(false);
 
     const [socialMediaInfos, setSocialMediaInfos] = React.useState(()=>{return new SocialMediaInfo(stockSymbol)});
-
-  //  let socialMediaInfos= new SocialMediaInfo(stockSymbol);
 
     useEffect(()=>{
         setSocialMediaInfos(new SocialMediaInfo(stockSymbol));
