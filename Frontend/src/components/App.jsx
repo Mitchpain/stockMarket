@@ -4,7 +4,7 @@ import Header from './Header.jsx'
 import Result from './Result.jsx'
 import StockInfo from "../app/StockInfo";
 import SocialMediaInfo from '../app/SocialMediaInfo.js';
-import {setNewAlgorithm} from "../app/dataMocker.js";
+import {setNewAlgorithm} from "../app/AlgorithmManager.js";
 const DEFAULT_TIME_WINDOW = 10;
 
 function App() {
@@ -17,10 +17,14 @@ function App() {
     const [stockRecommendations, setStockRecommendations] = React.useState(()=>{
         return [];
     });
-    let socialMediaInfos= new SocialMediaInfo(stockSymbol);
+    const [algorithmHasChange, setAlgorithmHasChanged] = React.useState(false);
+
+    const [socialMediaInfos, setSocialMediaInfos] = React.useState(()=>{return new SocialMediaInfo(stockSymbol)});
+
+  //  let socialMediaInfos= new SocialMediaInfo(stockSymbol);
 
     useEffect(()=>{
-        socialMediaInfos = new SocialMediaInfo(stockSymbol);
+        setSocialMediaInfos(new SocialMediaInfo(stockSymbol));
     },[stockSymbol]);
 
     useEffect(()=>{
@@ -30,9 +34,19 @@ function App() {
             ); 
         }
     },[stockSymbol, timeWindow]);
+
+    useEffect(()=>{
+        if(StockInfo.validateStockSymbol(stockSymbol)){
+            setStockRecommendations(
+            StockInfo.processNewAlgorithm(stockRecommendations, socialMediaInfos.total)
+            );
+        }
+        setAlgorithmHasChanged(false);
+    },[algorithmHasChange])
+
     return (
         <div id="app">
-            <Header setNewAlgorithm={setNewAlgorithm}/>
+            <Header setNewAlgorithm={setNewAlgorithm} setAlgorithmHasChanged={setAlgorithmHasChanged}/>
             <div className="app-container">
                 <UserInput onChangeStockSymbol={setStockSymbol} 
                 onChangeTimeWindow={setTimeWindow} stockSymbol={stockSymbol} 
@@ -40,7 +54,6 @@ function App() {
                 <Result stockSymbol={stockSymbol} socialMediaInfos={socialMediaInfos} stockRecommendations={stockRecommendations} />
             </div>
         </div>
-
     );
 };
   

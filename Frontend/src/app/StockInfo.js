@@ -1,4 +1,5 @@
-import {stockPriceGenerator, recommendationAlgorithm, socialMediaCountGenerator} from "./dataMocker";
+import {stockPriceGenerator, socialMediaCountGenerator} from "./dataMocker";
+import {recommendationAlgorithm} from "./AlgorithmManager";
 export default class StockInfo {
     constructor (price, date, recommendation) {
         this.price = price;
@@ -38,5 +39,14 @@ export default class StockInfo {
         const validStockSymbol =  ["kirk", "trill", "tsla", "logm", "zm", "vslr"];
         const index = validStockSymbol.indexOf(stockSymbol.toLowerCase());  
         return (index > -1);
+    }
+
+    static processNewAlgorithm(stockInfos, socialMediaCount){
+        const newStockInfos = []
+        stockInfos.forEach(stockInfo => {
+            const recommendation = recommendationAlgorithm(stockInfo.price, socialMediaCount);
+            newStockInfos.push(new StockInfo(stockInfo.price, stockInfo.date, recommendation));
+        }); 
+        return newStockInfos;
     }
 }
