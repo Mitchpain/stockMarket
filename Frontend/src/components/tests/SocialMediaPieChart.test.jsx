@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup, render, screen} from '@testing-library/react';
-import SocialMediaPieChart from './SocialMediaPieChart.jsx';
+import SocialMediaPieChart from '../SocialMediaPieChart.jsx';
 let constructConicGradientCalled = false;
 const mockedSocialMediaInfos = {
     constructConicGradient: ()=>{

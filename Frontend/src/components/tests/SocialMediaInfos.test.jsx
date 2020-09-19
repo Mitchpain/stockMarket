@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup, render, screen} from '@testing-library/react';
-import SocialMediaInfos from './SocialMediaInfos.jsx';
+import SocialMediaInfos from '../SocialMediaInfos.jsx';
 let constructConicGradientCalled = false;
 const mockedTotal = 100;
 const mockedSocialMediaInfos = {

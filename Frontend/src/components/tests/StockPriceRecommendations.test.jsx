@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup, render, screen} from '@testing-library/react';
-import StockPriceRecommendations from './StockPriceRecommendations.jsx';
+import StockPriceRecommendations from '../StockPriceRecommendations.jsx';
 const date = new Date();
 const mockedStockBuyRecommendations = [
     {

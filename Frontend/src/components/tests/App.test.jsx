@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup,  render, fireEvent, screen} from '@testing-library/react';
-import App from './App.jsx';
+import App from '../App.jsx';
 
 const countStockRecommendations = () => {
     return screen.getAllByTestId("recommendationRow").length;

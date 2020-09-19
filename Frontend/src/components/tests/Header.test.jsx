@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup, fireEvent, render, screen} from '@testing-library/react';
-import Header from './Header.jsx';
+import Header from '../Header.jsx';
 
 const mockedSetNewAlgorithm = ()=>{
     return;

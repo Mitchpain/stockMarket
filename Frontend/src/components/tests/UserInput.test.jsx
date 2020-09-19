@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup, render, screen} from '@testing-library/react';
-import UserInput from './UserInput.jsx';
+import UserInput from '../UserInput.jsx';
 
 afterEach(cleanup);
 describe('UserInput should render two inputs.', () => { 

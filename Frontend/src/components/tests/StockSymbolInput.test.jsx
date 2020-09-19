@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup, fireEvent, render, screen} from '@testing-library/react';
-import StockSymbolInput from './StockSymbolInput.jsx';
+import StockSymbolInput from '../StockSymbolInput.jsx';
 let mocked = "";
 
 const onChangeMocked = (value)=>{
