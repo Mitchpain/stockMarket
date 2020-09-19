@@ -7,6 +7,7 @@ const countStockRecommendations = () => {
 }
 const validInputStockSymbol = "logm";
 const invalidInputStockSymbol = "tesla";
+const newAlgorithm = "(price, socialMediaCount) => {return recommendations.BUY;}";
 
 
 afterEach(cleanup);
@@ -100,6 +101,22 @@ describe('App should render the result section', () => {
         expect(stockSymbolLabel.textContent).toBe(validInputStockSymbol.toUpperCase());
         fireEvent.change(textInput, { target: { value: invalidInputStockSymbol} });
         expect(stockSymbolLabel.textContent).toBe(validInputStockSymbol.toUpperCase());
+    });
+    it('The recommendations should all be set to buy if the algorithm is changed to return only buy.',()=>{
+        render(<App />);
+        const textInput = screen.getByPlaceholderText("Stock symbol");
+        fireEvent.change(textInput, { target: { value: validInputStockSymbol} });
+        const algoButton = screen.getByTestId("headerAlgoButton");
+        fireEvent.click(algoButton);
+        const textAreaEditAlgorithm = screen.getByTestId("textAreaEditAlgorithm");
+        fireEvent.change(textAreaEditAlgorithm, { target: { value: newAlgorithm} });
+        const buttonEditAlgorithm = screen.getByTestId("buttonEditAlgorithm");
+        fireEvent.click(buttonEditAlgorithm);
+        const recommendationRows = screen.getAllByTestId("recommendationRow");
+        expect(recommendationRows.length).toBe(10);
+        recommendationRows.forEach((row)=>{
+            expect(row.className).toBe("recommendation-buy");
+        });       
     });
 });
 

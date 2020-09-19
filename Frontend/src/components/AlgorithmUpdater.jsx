@@ -11,8 +11,8 @@ function AlgorithmUpdater(props) {
                 props.setAlgorithmHasChanged(true);
                 props.setAlgorithmUpdaterIsDisplayed(false);
             }}>
-                <textarea rows="25" cols="50" onChange={(e)=>{setNewAlgorithm(e.target.value)}} />
-                <button>Edit Algorithm</button>
+                <textarea data-testid="textAreaEditAlgorithm" rows="25" cols="50" onChange={(e)=>{setNewAlgorithm(e.target.value)}} />
+                <button data-testid="buttonEditAlgorithm" >Edit Algorithm</button>
             </form>
             <button onClick={()=>{props.setAlgorithmUpdaterIsDisplayed(false)}}>Cancel</button>
         </div>
