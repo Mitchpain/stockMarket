@@ -31,7 +31,6 @@ body {
     background-color: $color-main;
     margin: 2%;
     display: flex;
-    justify-content: center;
     width: 60%;
 }
 
@@ -66,6 +65,8 @@ body {
         font-weight:300;
         @extend .text;     
     }
+    align-content: center;
+    justify-content: center;
 }
 
 .socialMedia-pieChart{
@@ -77,14 +78,20 @@ body {
 
 #stockName{
     @extend .text;
-    display: flex; 
-    align-self: flex-start;
     margin: 0;
-  /*  position: relative;
-    width: 5%;
-    top: -15%;
-    left: -30%;
-    font-weight:400;*/
+    flex:2;
+}
+
+#result{
+    justify-content: space-between;
+}
+
+#recommendations{
+    flex:1;
+}
+
+#socialMediaInfos{
+    flex:2;
 }
 
 table {
@@ -100,7 +107,7 @@ table {
     font-weight:200;
   }
   td, th {
-    text-align: left;
+    text-align: center;
     padding: 8px;
   }
 

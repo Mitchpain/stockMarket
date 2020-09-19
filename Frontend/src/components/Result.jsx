@@ -5,7 +5,7 @@ function Result(props) {
     const hasRecommendations = props.stockRecommendations?.length > 0;
     if(hasRecommendations){
         return (
-            <div className="section">
+            <div className="section" id="result">
                 <h1 id="stockName">{props.stockSymbol.toUpperCase()}</h1>
                 <StockPriceRecommendations stockRecommendations={props.stockRecommendations}/>
                 <SocialMediaInfos socialMediaInfos = {props.socialMediaInfos} />
