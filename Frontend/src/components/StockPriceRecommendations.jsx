@@ -3,7 +3,7 @@ import React from 'react';
 function StockPriceRecommendations(props) {
   const stockRecommendations = (props.stockRecommendations);
     return (
-      <div  id="recommendations">
+      <div  id="recommendations" className="stockInfoBase">
       <table>
         <thead>
         <tr>

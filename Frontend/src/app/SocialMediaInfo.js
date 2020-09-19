@@ -2,7 +2,7 @@ import {socialMediaCountGenerator} from "./dataMocker";
 const FACEBOOK_COLOR = "#4267B2";
 const TWITTER_COLOR = "#1DA1F2";
 const LINKEDIN_COLOR = "#2867B2";
-const INSTAGRAM_COLOR = "#E1306C";
+const INSTAGRAM_COLOR = "#C13584";
 const socialMedias = {
     TWITTER: "twitter",
     FACEBOOK: "facebook",
