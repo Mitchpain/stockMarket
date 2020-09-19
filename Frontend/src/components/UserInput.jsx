@@ -5,7 +5,7 @@ import TimeWindowInput from "./TimeWindowInput.jsx";
 function UserInput(props) {
   return (
     <div  id="userInputs" className="section">
-    <form >
+    <form onSubmit={(e)=>{e.preventDefault();}}>
       <StockSymbolInput stockSymbol = {props.stockSymbol} onChangeStockSymbol={props.onChangeStockSymbol} />
       <TimeWindowInput timeWindow = {props.timeWindow} onChangeTimeWindow={props.onChangeTimeWindow} />
     </form>

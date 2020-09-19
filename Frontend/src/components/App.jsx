@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import UserInput from './UserInput.jsx'
+import Header from './Header.jsx'
 import Result from './Result.jsx'
 import StockInfo from "../app/StockInfo";
 import SocialMediaInfo from '../app/SocialMediaInfo.js';
+import {setNewAlgorithm} from "../app/dataMocker.js";
 const DEFAULT_TIME_WINDOW = 10;
 
 function App() {
@@ -30,14 +32,7 @@ function App() {
     },[stockSymbol, timeWindow]);
     return (
         <div id="app">
-            <header className="main-header">
-                <div className="container">
-                    <nav className="main-nav">
-                        <h1>Stock Market Recommender</h1>
-                        <h1 onClick={updateAlgo} id="updateButton">Update Algorithm</h1>
-                    </nav>
-                </div>
-            </header>
+            <Header setNewAlgorithm={setNewAlgorithm}/>
             <div className="app-container">
                 <UserInput onChangeStockSymbol={setStockSymbol} 
                 onChangeTimeWindow={setTimeWindow} stockSymbol={stockSymbol} 

@@ -1,0 +1,16 @@
+#AlgorithmUpdater{
+    position: fixed;
+    left: 40%;
+    top: 10%;
+    background-color: white;
+    z-index: 15;
+    display: flex;
+}
+
+#shadow{
+    background-color: gray;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}

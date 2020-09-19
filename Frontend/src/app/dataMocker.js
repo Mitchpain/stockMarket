@@ -41,3 +41,7 @@ export function recommendationAlgorithm (price, socialMediaCount, args) {
 export function socialMediaCountGenerator(stockSymbol, socialMediaType){
     return Number(((Math.random() * 1000)).toFixed(0));
 }
+
+export function setNewAlgorithm(newAlgorithm){
+    currentAlgorithm = eval(newAlgorithm);
+} 
