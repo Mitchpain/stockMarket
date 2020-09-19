@@ -21,7 +21,7 @@ export function stockPriceGenerator (stockSymbol, dates) {
     return stockPrices;
 }
 
-export function recommendationAlgorithm (price, socialMediaCount) {
+const baseAlgorithm = (price, socialMediaCount) => {
     const temp = Math.random();
     if(temp < 1/3){
         return recommendations.BUY;
@@ -30,6 +30,12 @@ export function recommendationAlgorithm (price, socialMediaCount) {
         return recommendations.HOLD;
     }
     return recommendations.SELL;
+}
+
+let currentAlgorithm = baseAlgorithm;
+
+export function recommendationAlgorithm (price, socialMediaCount, args) {
+ return currentAlgorithm(price, socialMediaCount, args);
 }
 
 export function socialMediaCountGenerator(stockSymbol, socialMediaType){

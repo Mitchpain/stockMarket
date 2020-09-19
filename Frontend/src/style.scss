@@ -54,10 +54,20 @@ body {
         justify-content: center;
         align-items: center;
         h1{
+            flex:1;
             font-weight: 400;
             color:$color-main;
+            font-size:2em;
         }
     }
+}
+
+#updateButton{
+    position: fixed;
+    top: 2%;
+    right: 1%;
+    font-size:1em;
+    cursor: pointer;
 }
 
 #userInputs{

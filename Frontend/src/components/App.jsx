@@ -28,13 +28,13 @@ function App() {
             ); 
         }
     },[stockSymbol, timeWindow]);
-
     return (
         <div id="app">
             <header className="main-header">
                 <div className="container">
                     <nav className="main-nav">
                         <h1>Stock Market Recommender</h1>
+                        <h1 onClick={updateAlgo} id="updateButton">Update Algorithm</h1>
                     </nav>
                 </div>
             </header>
