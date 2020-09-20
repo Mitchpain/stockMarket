@@ -1,8 +1,17 @@
 import React from 'react';
 import './styles/SocialMediaPieChartLegend.scss';
 function SocialMediaPieChartLegend(props) {
+    let position;
+    if(props?.position?.x){
+        const positionX = props.position.x;
+        const positionY = props.position.y;
+        position = {
+            top: positionY +"px",
+            left: positionX + "px"
+        }
+    }
     return (
-        <div id="socialMediaPie-Legend">
+        <div style={position} id="socialMediaPie-Legend">
             <div className="legend-element">
                 <div className="facebook-legend"></div>
                 <span className="legend-label">Facebook: {props.socialMediaInfos.facebook}</span>                    

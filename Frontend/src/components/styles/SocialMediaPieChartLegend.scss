@@ -28,12 +28,13 @@ $intagramColor:#C13584;
 }
 
 #socialMediaPie-Legend{
+    position: absolute;
     display: flex;
     flex-direction: column;
     background-color: $color-secondary;
     color:$color-main;
-    padding:5%;
-    width:30%;
+    padding: 1%;
+    width: 7%;
     border-radius: 20px;
     font-weight: 100;
     opacity: 0.95;
@@ -50,4 +51,11 @@ $intagramColor:#C13584;
 .legend-label{
     margin-left: 4%;
     flex:1;
+}
+
+@media screen and (max-width: $width-responsiveness) {
+    #socialMediaPie-Legend{
+        position:unset !important;
+        width:30%;
+    }
 }
