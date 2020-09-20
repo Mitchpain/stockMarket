@@ -34,7 +34,7 @@ describe('App should be rendered empty at the startup.', () => {
     });
     it('It should have an empty text input',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         expect(textInput.value).toBe('');
     });  
 });
@@ -42,7 +42,7 @@ describe('App should be rendered empty at the startup.', () => {
 describe('App should be rendered empty', () => { 
     it('If an invalid stock symbol is set.',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         fireEvent.change(textInput, { target: { value: invalidInputStockSymbol} })
         const socialMediaInfoSection = screen.queryByTestId("socialMediaInfo");
         expect(socialMediaInfoSection).toBeNull();
@@ -57,7 +57,7 @@ describe('App should be rendered empty', () => {
 describe('App should render the result section', () => { 
     it('If a valid stock symbol is set.',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         fireEvent.change(textInput, { target: { value: validInputStockSymbol} })
         const socialMediaInfoSection = screen.queryByTestId("socialMediaInfo");
         expect(socialMediaInfoSection).not.toBeNull();
@@ -70,14 +70,14 @@ describe('App should render the result section', () => {
 
     it('The StockPriceRecommendation table should countains 10 recommendations by default',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         fireEvent.change(textInput, { target: { value: validInputStockSymbol} })
         const count = countStockRecommendations();
         expect(count).toBe(10);
     });
     it('The StockPriceRecommendation table should have 11 recommendations if the time window is set to 11',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         fireEvent.change(textInput, { target: { value: validInputStockSymbol} });
         const numberInput = screen.getByPlaceholderText("Time window");
         fireEvent.change(numberInput, { target: { value: 11} });
@@ -86,7 +86,7 @@ describe('App should render the result section', () => {
     });
     it('The StockPriceRecommendation table should have 10 recommendations if the time window is set to -1',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         fireEvent.change(textInput, { target: { value: validInputStockSymbol} });
         const numberInput = screen.getByPlaceholderText("Time window");
         fireEvent.change(numberInput, { target: { value: -1} });
@@ -95,7 +95,7 @@ describe('App should render the result section', () => {
     });
     it('The Stock symbol label should not change if the input stock symbol is set to an invalid value after a valid one.',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         fireEvent.change(textInput, { target: { value: validInputStockSymbol} });
         const stockSymbolLabel = screen.queryByTestId("stockSymbolLabel");
         expect(stockSymbolLabel.textContent).toBe(validInputStockSymbol.toUpperCase());
@@ -104,7 +104,7 @@ describe('App should render the result section', () => {
     });
     it('The recommendations should all be set to buy if the algorithm is changed to return only buy.',()=>{
         render(<App />);
-        const textInput = screen.getByPlaceholderText("Stock symbol");
+        const textInput = screen.queryByTestId("stockSymbolInput");
         fireEvent.change(textInput, { target: { value: validInputStockSymbol} });
         const algoButton = screen.getByTestId("headerAlgoButton");
         fireEvent.click(algoButton);

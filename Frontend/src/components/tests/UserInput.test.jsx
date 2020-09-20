@@ -7,7 +7,7 @@ describe('UserInput should render two inputs.', () => {
   const timeWindow = 15;  
     it('It should have an empty text input',()=>{
       render(<UserInput timeWindow={timeWindow} />);
-      const textInput = screen.getByPlaceholderText("Stock symbol");
+      const textInput = screen.queryByTestId("stockSymbolInput");
       expect(textInput.value).toBe('');
     }); 
     it('It should have a number input with the initial value set.',()=>{

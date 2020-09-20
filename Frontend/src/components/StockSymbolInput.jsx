@@ -4,7 +4,8 @@ import StockInfo from "../app/StockInfo";
 function StockSymbolInput(props) {
   return (
     <div className="inputContainer">
-      <input type="text" placeholder="Stock symbol"
+      <input type="text"
+        data-testid="stockSymbolInput"
         onChange={(e)=>{
         if(StockInfo.validateStockSymbol(e.target.value)) {
           props.onChangeStockSymbol(e.target.value)}
