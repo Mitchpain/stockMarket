@@ -24,6 +24,7 @@ body {
     margin: 2%;
     display: flex;
     width: 60%;
+    box-shadow: $shadow;
 }
 
 .app-container{
@@ -43,4 +44,5 @@ body {
     margin: 1%;
     max-height: $section-height; 
     min-height: $section-height; 
+    box-shadow: $shadow;
 }
