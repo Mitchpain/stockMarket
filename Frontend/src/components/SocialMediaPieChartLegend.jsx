@@ -11,7 +11,8 @@ function SocialMediaPieChartLegend(props) {
         }
     }
     return (
-        <div style={position} id="socialMediaPie-Legend">
+        <div data-testid="socialMediaPieChartLegend"  
+        style={position} id="socialMediaPie-Legend">
             <div className="legend-element">
                 <div className="facebook-legend"></div>
                 <span className="legend-label">Facebook: {props.socialMediaInfos.facebook}</span>                    
