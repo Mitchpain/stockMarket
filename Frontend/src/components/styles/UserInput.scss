@@ -1,12 +1,16 @@
 @import "../../common.scss";
 #userInputs{
+    align-content: center;
+    justify-content: center;
     input{
         @extend .text;
         border:0;
         border-bottom: 1px solid $color-secondary;
         background-color: $color-background;
         font-weight:300;   
+        padding:5%;
     }
-    align-content: center;
-    justify-content: center;
+    form{
+        display:flex;
+    }
 }
