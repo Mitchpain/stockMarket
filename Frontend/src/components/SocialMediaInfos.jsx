@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialMediaPieChart from './SocialMediaPieChart.jsx';
+import "./styles/SocialMediaInfos.scss";
 function SocialMediaInfo(props) {
     return (
         <div data-testid="socialMediaInfo" id="socialMediaInfos" className="stockInfoBase">

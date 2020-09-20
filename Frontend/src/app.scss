@@ -1,0 +1,46 @@
+@import "./common.scss";
+$section-height: 400px;
+
+body {
+    @extend .text;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-background;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section {
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: $color-main;
+    margin: 2%;
+    display: flex;
+    width: 60%;
+}
+
+.app-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+.stockInfoBase {
+    flex:2;
+    background-color:$color-background;
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    max-height: $section-height; 
+    min-height: $section-height; 
+}

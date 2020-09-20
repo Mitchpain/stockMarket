@@ -1,6 +1,7 @@
 import React from 'react';
 import SocialMediaInfos from './SocialMediaInfos.jsx';
 import StockPriceRecommendations from './StockPriceRecommendations.jsx'
+import "./styles/Result.scss";
 function Result(props) {
     const hasRecommendations = props.stockRecommendations?.length > 0;
     if(hasRecommendations){

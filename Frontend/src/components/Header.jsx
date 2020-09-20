@@ -1,6 +1,6 @@
 import React from 'react';
 import AlgorithmUpdater from './AlgorithmUpdater.jsx';
-
+import "./styles/Header.scss"
 function Header(props) {
     const [algorithmUpdaterIsDisplayed, setAlgorithmUpdaterIsDisplayed] = React.useState(false);
     return (

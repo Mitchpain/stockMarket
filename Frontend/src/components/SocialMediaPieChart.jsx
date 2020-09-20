@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/SocialMediaPieChart.scss';
 function SocialMediaPieChart(props) {
     const conicString = props.socialMediaInfos.constructConicGradient();
     const divStyle = { 

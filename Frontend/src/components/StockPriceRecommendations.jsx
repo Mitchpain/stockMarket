@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './styles/StockPriceRecommendations.scss';
 function StockPriceRecommendations(props) {
   const stockRecommendations = (props.stockRecommendations);
     return (

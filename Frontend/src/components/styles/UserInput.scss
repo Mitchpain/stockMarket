@@ -1,0 +1,12 @@
+@import "../../common.scss";
+#userInputs{
+    input{
+        @extend .text;
+        border:0;
+        border-bottom: 1px solid $color-secondary;
+        background-color: $color-background;
+        font-weight:300;   
+    }
+    align-content: center;
+    justify-content: center;
+}

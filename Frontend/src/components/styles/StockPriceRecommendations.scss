@@ -1,0 +1,31 @@
+@import "../../common.scss";
+.stockInfoBase{
+    table {
+        border-collapse: collapse;
+        width: 90%;
+        cursor: context-menu;
+        margin: 1% auto;
+    }
+    th {
+        font-weight:400;
+    }
+    td{
+        font-weight:200;
+    }
+    td, th {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .recommendation-sell{
+        background-color:$color-sell;
+    }
+
+    .recommendation-buy{
+        background-color:$color-buy;
+    }
+}
+
+#recommendations{
+    overflow:auto; 
+}

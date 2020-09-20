@@ -1,5 +1,5 @@
 import React from 'react';
-import './AlgorithmUpdater.scss';
+import './styles/AlgorithmUpdater.scss';
 
 function AlgorithmUpdater(props) {
     const [newAlgorithm, setNewAlgorithm] = React.useState("");
