@@ -1,0 +1,53 @@
+@import "../../common.scss";
+$facebookColor:#4267B2;
+$twitterColor:#1DA1F2;
+$linkedinColor:#2867B2;
+$intagramColor:#C13584;
+.facebook-legend{
+    height: 15px;
+    width: 15px;
+    background-color: $facebookColor;
+}
+
+.twitter-legend{
+    height: 15px;
+    width: 15px;
+    background-color: $twitterColor;
+}
+
+.instagram-legend{
+    height: 15px;
+    width: 15px;
+    background-color: $intagramColor;
+}
+
+.linkedin-legend{
+    height: 15px;
+    width: 15px;
+    background-color: $linkedinColor;
+}
+
+#socialMediaPie-Legend{
+    display: flex;
+    flex-direction: column;
+    background-color: $color-secondary;
+    color:$color-main;
+    padding:5%;
+    width:30%;
+    border-radius: 20px;
+    font-weight: 100;
+    opacity: 0.95;
+    box-shadow: $shadow;
+}
+
+.legend-element{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin:3%;
+}
+
+.legend-label{
+    margin-left: 4%;
+    flex:1;
+}

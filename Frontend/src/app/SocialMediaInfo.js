@@ -70,14 +70,17 @@ export default class SocialMediaInfo {
      * construct the chart pie.
      */
     constructConicGradientString(){
-        const fbAngle = this.calculateConicGradientAngle(this.facebook,0);
-        const fbGradientString = this.constructGradientString(FACEBOOK_COLOR,0, fbAngle);
-        const twitterAngle = this.calculateConicGradientAngle(this.twitter, fbAngle);
-        const twitterGradientString = this.constructGradientString(TWITTER_COLOR, fbAngle, twitterAngle);
-        const instagramAngle = this.calculateConicGradientAngle(this.instagram, twitterAngle);
-        const instagramGradientString = this.constructGradientString(INSTAGRAM_COLOR, twitterAngle, instagramAngle);
+        const twitterAngle = this.calculateConicGradientAngle(this.twitter, 0);
+        const twitterGradientString = this.constructGradientString(TWITTER_COLOR, 0, twitterAngle);
+
+        const fbAngle = this.calculateConicGradientAngle(this.facebook,twitterAngle);
+        const fbGradientString = this.constructGradientString(FACEBOOK_COLOR,twitterAngle, fbAngle);
+
+        const instagramAngle = this.calculateConicGradientAngle(this.instagram, fbAngle);
+        const instagramGradientString = this.constructGradientString(INSTAGRAM_COLOR, fbAngle, instagramAngle);
+        
         const linkedingGradientString = this.constructGradientString(LINKEDIN_COLOR, instagramAngle, 360);
-        return fbGradientString + ", " + twitterGradientString + ", " + instagramGradientString + ", " +linkedingGradientString;
+        return twitterGradientString + ", " + fbGradientString + ", " + instagramGradientString + ", " +linkedingGradientString;
     }
 
 }

@@ -14,10 +14,14 @@ function StockPriceRecommendations(props) {
         </thead>
         <tbody>
         {stockRecommendations.map((recommendation, index) => (
-          <tr title={recommendation.recommendation.toUpperCase()} data-testid="recommendationRow" key={index} className={"recommendation-"+recommendation.recommendation}>
+
+          <tr title={recommendation.recommendation.toUpperCase()}
+           data-testid="recommendationRow" key={index} 
+           className={"recommendation-"+recommendation.recommendation}>
               <td data-testid="recommendationDate">{recommendation.date.toLocaleDateString("en-US")}</td>
               <td data-testid="recommendationPrice">{recommendation.price}</td>
           </tr>
+          
         ))}
         </tbody>
     </table>
