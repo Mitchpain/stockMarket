@@ -31,7 +31,7 @@ function App() {
     useEffect(()=>{
         if(StockInfo.validateStockSymbol(stockSymbol)){
             setStockRecommendations(
-                StockInfo.fetchStockPriceRecommendations(stockSymbol,timeWindow, socialMediaInfos.total)
+                StockInfo.fetchStockInfos(stockSymbol,timeWindow, socialMediaInfos.total)
             ); 
         }
     },[stockSymbol, timeWindow]);

@@ -1,4 +1,4 @@
-const recommendations= {
+export const recommendations= {
     BUY: 'buy',
     HOLD: 'hold',
     SELL:'sell'

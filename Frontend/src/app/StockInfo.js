@@ -31,14 +31,14 @@ export default class StockInfo {
     }
 
     /**
-     * @name fetchStockPriceRecommendations
+     * @name fetchStockInfos
      * @description Compute the StockInfo about a stock for the requested time window
      * @param {string} stockSymbol The analyzed stock symbol
      * @param {number} timeWindow The analyzed time frame
      * @param {number} socialMediaCount The number of post about the analyzed stock.
      * @returns {StockInfo[]} An array describing the result of the request.
      */
-    static fetchStockPriceRecommendations(stockSymbol, timeWindow, socialMediaCount) {
+    static fetchStockInfos(stockSymbol, timeWindow, socialMediaCount) {
         const stockInfos = [];
         const stocks = stockPriceGenerator(stockSymbol, this.computeDates(timeWindow));
         stocks.forEach(stock => {
