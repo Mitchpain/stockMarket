@@ -4,7 +4,7 @@ import SocialMediaInfos from '../SocialMediaInfos.jsx';
 let constructConicGradientCalled = false;
 const mockedTotal = 100;
 const mockedSocialMediaInfos = {
-    constructConicGradient: ()=>{
+    constructConicGradientString: ()=>{
         constructConicGradientCalled = true;
     },
     total:mockedTotal

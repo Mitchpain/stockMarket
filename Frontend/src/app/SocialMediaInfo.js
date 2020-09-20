@@ -1,9 +1,9 @@
 import {socialMediaCountGenerator} from "./dataMocker";
-const FACEBOOK_COLOR = "#4267B2";
-const TWITTER_COLOR = "#1DA1F2";
-const LINKEDIN_COLOR = "#2867B2";
-const INSTAGRAM_COLOR = "#C13584";
-const socialMedias = {
+export const FACEBOOK_COLOR = "#4267B2";
+export const TWITTER_COLOR = "#1DA1F2";
+export const LINKEDIN_COLOR = "#2867B2";
+export const INSTAGRAM_COLOR = "#C13584";
+const SOCIAL_MEDIAS = {
     TWITTER: "twitter",
     FACEBOOK: "facebook",
     INSTAGRAM: "instagram",
@@ -24,10 +24,10 @@ export default class SocialMediaInfo {
      * @description Fetch the count on the handled social media
      */
     computeSocialMediaCount(){
-        this.twitter = this.getSocialMediaCount(socialMedias.TWITTER);
-        this.facebook = this.getSocialMediaCount(socialMedias.FACEBOOK);
-        this.instagram = this.getSocialMediaCount(socialMedias.INSTAGRAM);
-        this.linkedin = this.getSocialMediaCount(socialMedias.LINKEDIN);
+        this.twitter = this.getSocialMediaCount(SOCIAL_MEDIAS.TWITTER);
+        this.facebook = this.getSocialMediaCount(SOCIAL_MEDIAS.FACEBOOK);
+        this.instagram = this.getSocialMediaCount(SOCIAL_MEDIAS.INSTAGRAM);
+        this.linkedin = this.getSocialMediaCount(SOCIAL_MEDIAS.LINKEDIN);
         this.total = this.twitter + this.facebook + this.instagram + this.linkedin;
     }
 
@@ -65,11 +65,11 @@ export default class SocialMediaInfo {
     }
 
     /**
-     * @name constructConicGradient
+     * @name constructConicGradientString
      * @description Contruct the string used by the coninc gradient to
      * construct the chart pie.
      */
-    constructConicGradient(){
+    constructConicGradientString(){
         const fbAngle = this.calculateConicGradientAngle(this.facebook,0);
         const fbGradientString = this.constructGradientString(FACEBOOK_COLOR,0, fbAngle);
         const twitterAngle = this.calculateConicGradientAngle(this.twitter, fbAngle);

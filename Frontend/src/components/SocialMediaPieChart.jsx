@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/SocialMediaPieChart.scss';
 function SocialMediaPieChart(props) {
-    const conicString = props.socialMediaInfos.constructConicGradient();
+    const conicString = props.socialMediaInfos.constructConicGradientString();
     const divStyle = { 
         backgroundImage: 'conic-gradient(' + conicString + ')',
     };
