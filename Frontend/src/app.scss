@@ -46,3 +46,11 @@ body {
     min-height: $section-height; 
     box-shadow: $shadow;
 }
+@media screen and (max-width: $width-responsiveness) {
+    .app-container{
+        height:unset;
+    }
+    .stockInfoBase{
+        margin-top: 2%; 
+    }
+}

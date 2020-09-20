@@ -8,3 +8,9 @@
 #result{
     justify-content: space-between;
 }
+
+@media screen and (max-width: $width-responsiveness) {
+    #result{
+        flex-direction: column;
+    }
+}
