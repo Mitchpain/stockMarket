@@ -11,10 +11,20 @@ function AlgorithmUpdater(props) {
                 props.setAlgorithmHasChanged(true);
                 props.setAlgorithmUpdaterIsDisplayed(false);
             }}>
-                <textarea data-testid="textAreaEditAlgorithm" rows="25" cols="50" onChange={(e)=>{setNewAlgorithm(e.target.value)}} />
-                <button data-testid="buttonEditAlgorithm" >Edit Algorithm</button>
+                <textarea data-testid="textAreaEditAlgorithm" 
+                rows="25" cols="50" 
+                onChange={
+                    (e)=>{setNewAlgorithm(e.target.value)}
+                } />
+                <button data-testid="buttonEditAlgorithm">
+                    Edit Algorithm
+                </button>
             </form>
-            <button onClick={()=>{props.setAlgorithmUpdaterIsDisplayed(false)}}>Cancel</button>
+            <button data-testid="buttonCancelEditAlgorithm"
+             onClick={()=>
+             {props.setAlgorithmUpdaterIsDisplayed(false)}}>
+                 Cancel
+            </button>
         </div>
     );
 };

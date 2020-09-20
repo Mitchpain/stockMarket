@@ -17,7 +17,11 @@ function Header(props) {
             </div>
             {algorithmUpdaterIsDisplayed &&
                 <div data-testid="algoWindow" >
-                    <AlgorithmUpdater setAlgorithmUpdaterIsDisplayed={setAlgorithmUpdaterIsDisplayed} setNewAlgorithm={props.setNewAlgorithm} setAlgorithmHasChanged={props.setAlgorithmHasChanged} />
+                    <AlgorithmUpdater 
+                    setAlgorithmUpdaterIsDisplayed={setAlgorithmUpdaterIsDisplayed} 
+                    setNewAlgorithm={props.setNewAlgorithm} 
+                    setAlgorithmHasChanged={props.setAlgorithmHasChanged} 
+                    />
                     <div id="shadow"></div>
                 </div>
             
