@@ -30,7 +30,6 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname, 'build'),
-    port: 8080,
-    open: 'chrome', // 'google-chrome' on Linux and 'chrome' on Windows
+    port: 8080
   },
 };
