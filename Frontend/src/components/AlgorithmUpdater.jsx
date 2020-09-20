@@ -5,21 +5,19 @@ function AlgorithmUpdater(props) {
     const [newAlgorithm, setNewAlgorithm] = React.useState("");
     return (
         <div id="AlgorithmUpdater">
-            <form onSubmit={
-                (e)=>{e.preventDefault();
-                props.setNewAlgorithm(newAlgorithm);
+            <textarea data-testid="textAreaEditAlgorithm" 
+            placeholder="New Algorithm. i.e : (price, socialMediaCount) => {return recommendations.BUY;}"
+            rows="25" cols="50" 
+            onChange={
+                (e)=>{setNewAlgorithm(e.target.value)}
+            } />
+            <button data-testid="buttonEditAlgorithm"
+            onClick={()=>
+                {props.setNewAlgorithm(newAlgorithm);
                 props.setAlgorithmHasChanged(true);
-                props.setAlgorithmUpdaterIsDisplayed(false);
-            }}>
-                <textarea data-testid="textAreaEditAlgorithm" 
-                rows="25" cols="50" 
-                onChange={
-                    (e)=>{setNewAlgorithm(e.target.value)}
-                } />
-                <button data-testid="buttonEditAlgorithm">
+                props.setAlgorithmUpdaterIsDisplayed(false);}}>
                     Edit Algorithm
-                </button>
-            </form>
+            </button>
             <button data-testid="buttonCancelEditAlgorithm"
              onClick={()=>
              {props.setAlgorithmUpdaterIsDisplayed(false)}}>
