@@ -26,6 +26,15 @@
         background-color:$color-buy;
         color:$color-main;
     }
+    .recommendation-buy:hover{
+        background-color:$color-buy-hover;
+    }
+    .recommendation-sell:hover{
+        background-color:$color-sell-hover;
+    }
+    .recommendation-hold:hover{
+        background-color:$color-hold-hover;
+    }
 }
 
 #recommendations{
