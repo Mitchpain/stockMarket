@@ -3,14 +3,17 @@
     align-content: center;
     justify-content: center;
     input{
+        all:unset;
         @extend .text;
         border:0;
         border-bottom: 1px solid $color-secondary;
         background-color: $color-background;
         font-weight:300;   
-        padding:5%;
+        padding:1%;
     }
     form{
         display:flex;
+        width:60%;
+        justify-content: space-around;
     }
 }
