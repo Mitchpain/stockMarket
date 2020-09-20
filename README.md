@@ -22,7 +22,7 @@ To trigger the first analysis you need to enter a stock symbol in the designed i
 
 Valid stock symbols : kirk, trill, tsla, logm, zm, vslr
 
-## Running the test
+## Running the tests
 You can run the test with
 ```javascript
 npm run test
@@ -35,7 +35,17 @@ Here's an example of a custom algorithm that would only return the BUY recommend
 ```javascript
 (price, socialMediaCount) => {return recommendations.BUY;}
 ```
+The valid return types are
+```javascript
+recommendations.BUY
+recommendations.HOLD
+recommendations.SELL
+```
+
+## Social Media Section
+
+Once a list of recommendations is generated, you will see the social media section on the right. If you put your mouse long enough on the graph, you will be able to see more details about the social media posts.
 
 ## Todo
 
-I should add more security to the Edit Algorithm section.
+I should add more security to the Edit algorithm section.
