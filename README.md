@@ -6,9 +6,9 @@ A frontend for a web application that can provides recommendations to a user to 
 
 ## Getting Started
 
-Clone the current repository. 
-Go to ./stockMarket/Frontend/
-Run
+Clone the current repository   
+Go to ./stockMarket/Frontend/  
+Run  
 ```javascript
 npm install
 ```
